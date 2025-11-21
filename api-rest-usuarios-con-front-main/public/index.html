@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Registro de usuarios</title>
+</head>
+
+<body>
+    <h1>FRONT API Administración de Usuarios</h1>
+    <h2 id="message" style="color:red"></h2>
+    <section id="registro">
+        <h2>registro de usuarios</h2>
+
+        <form action="" id="registro">
+            <label>Usuario</label>
+            <input type="text" name="usuario">
+            <label>Email</label>
+            <input type="email" name="email">
+            <label>Contraseña</label>
+            <input type="password" name="pass">
+            <input class="submit" type="submit" value="Registrame">
+        </form>
+
+    </section>
+
+    <section id="login">
+        <h2>Inicio de Sesion / login</h2>
+        <form action="" id="login">
+            <label>Email</label>
+            <input type="email" name="email">
+            <label>Contraseña</label>
+            <input type="password" name="pass">
+            <input class="submit" type="submit" value="Login">
+        </form>
+
+    </section>
+
+    <section id="sesion">
+        <section id="usuario">
+            <h2>Sesion Iniciada por ${Nombre USUARIO}</h2>
+        </section>
+        <button class="btn_perfil">ver perfil</button>
+        <div id="perfil">
+            <div id="datos_perfil"></div>
+            <div id="actualizar">
+                <button id="btn_act_datos">Actualizar Datos</button>
+                <button id="btn_up_imagen">Actualizar Imagen</button>
+                <button id="btn_change_pass">Cambiar Contraseña</button>
+                <button id="btn_eliminar_cuenta" onclick="confirmarAccion()">Eliminar Cuenta</button>
+            </div>
+        </div>
+
+        <section id="update">
+        <h2>Actualizar Datos</h2>
+            <form action="" id="formUpdate">
+                <label>Nuevo nombre usuario</label>
+                <input type="text" name="usuario" placeholder="escriba nuevo nombre">
+                <input type="submit" class="submit" value="Actualizar">
+            </form>
+        </section>
+
+        <section id="image">
+            <h2>Publicar imagen de perfil</h2>
+            <form action="/users/image" method="post"  id="formImage" enctype="multipart/form-data">
+                <label>Imagen</label>
+                <input type="file" name="imagen" accept="image/*">
+                <input type="submit" class="submit" value="Publicar">
+            </form>
+        </section>
+
+        <section id="changePass">
+            <h2>Cambiar Contraseña</h2>
+            <form action="" id="formChangePass">
+                <label>Nueva Contraseña</label>
+                <input type="password" name="pass">
+                <input type="submit" class="submit" value="Cambiar Contraseña">
+            </form>
+        </section>
+    </section>
+
+    <section id="logout">
+        <button class="btn_logout">Cerrar Sesion</button>
+    </section>
+
+    <script src="./js/modulos_usuarios.js"></script>
+</body>
+
+</html>
