@@ -11,21 +11,18 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+ /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+ /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ /*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `latienda`
 --
 
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `users`
---
+-- Tabla USERS
+-- --------------------------------------------------------
 
 CREATE TABLE `users` (
   `ID_user` int(11) NOT NULL,
@@ -36,27 +33,33 @@ CREATE TABLE `users` (
   `Type_user` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `users`
---
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID_user`);
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `users`
---
 ALTER TABLE `users`
   MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+-- --------------------------------------------------------
+-- Tabla PRODUCTS (agregada desde el primer dump)
+-- --------------------------------------------------------
+
+CREATE TABLE `products` (
+  `id_product` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(80) DEFAULT NULL,
+  `price` float NOT NULL,
+  `stock` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id_product`);
+
+ALTER TABLE `products`
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+ /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
